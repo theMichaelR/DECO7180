@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mapStyles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;700&display=swap" rel="stylesheet">
 </head>
-<body class="chatbot-page">
+<body class="map-page">
 
     <header>
         <div class="wrapper">
@@ -26,7 +26,7 @@
                     </li>
 
                     <li>
-                        <a href="chatbot.html">AI COACHING</a>
+                        <a href="heatmap.html">CRIME HEATMAP</a>
                     </li>
 
                     <li>
@@ -38,8 +38,8 @@
                     </li>
                 </ul>
             </nav>
-            <!-- End of destktop navigation menu-->
 
+            <!-- Mobile navigation menu -->
             <nav class="mobile-nav">
                 <div class="logo">Balance</div>
                 <div class="menu-icon">
@@ -53,7 +53,6 @@
                 </div>
 
                 <ul>
-                  <ul>
                     <li>
                         <a href="index.html">HOME</a>
                     </li>
@@ -63,7 +62,7 @@
                     </li>
 
                     <li>
-                        <a href="chatbot.html">AI COACHING</a>
+                        <a href="heatmap.html">CRIME HEATMAP</a>
                     </li>
 
                     <li>
@@ -75,46 +74,25 @@
                     </li>
                 </ul>
             </div>
-
-            <!-- End of mobile navigation menu-->
+            <!-- End of mobile navigation menu -->
 
             <div class="hero-section">
                 <div class="left">
                     <h1>
                         REJECT THE <BR>CHAOS <BR>RECLAIM YOUR <BR>BALANCE
                     </h1>
-
-                    <!-- End of left hand side-->
                 </div>
-
                 <div class="right">
                     <img src="media/max-vs-PjCh5goo-unsplash.jpg" alt="Person Doing Meditation Pose" />
                     <figcaption>https://unsplash.com/photos/vs-PjCh5goo?utm_source=unsplash&utm_medium=referral&utm_c
                         ontent=creditCopyText</figcaption>
                 </div>
             </div>
-
         </div>
     </header>
 
-    <!-- End of header section-->
-
-    <div id="chat-window">
-        <div class="main-title">Personalised Wellness Coaching</div>
-        <div id="chat-messages"></div>
-        <form id="chat-form">
-        <input
-            type="text"
-            id="chat-input"
-            autocomplete="off"
-            placeholder="Type your message here"
-            required
-        />
-        <button type="submit">Send</button>
-        </form>
-    </div>
-
-    <!-- End of chatbot-->
+    <!-- Map container -->
+    <div id="map" style="height: 600px; width: 100%;"></div>
 
     <footer>
         <div class="wrap">
@@ -138,13 +116,17 @@
                     <input type="text" placeholder="Email Address" />
                     <button class="submit-btn">Subscribe</button>
                 </form>
-
             </div>
             <h2 class="end-copy">READY TO EMBRACE SERENITY?</h2>
         </div>
     </footer>
-        <!-- End of footer section-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.3/axios.min.js"></script>
-        <script src="js/main.js"></script>
-    </body>
+
+    <!-- Google Maps API -->
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA15MU69GZXFABCHmKgPZIhXu0_ayRlzWo&libraries=visualization&callback=initMap">
+    </script>
+    <script src="js/map.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
 </html>
