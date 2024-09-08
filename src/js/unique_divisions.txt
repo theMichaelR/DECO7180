@@ -1,0 +1,337 @@
+"List of uniqe 'divisions' in QLD, source: 
+https://www.data.qld.gov.au/dataset/offence-numbers-police-divisions-monthly-from-july-2001/resource/34f74f13-3269-4916-b1a8-c5ba825972af"
+
+Acacia Ridge
+Adavale
+Agnes Water
+Albany Creek
+Allora
+Alpha
+Anakie
+Annerley
+Aramac
+Atherton
+Augathella
+Aurukun
+Ayr
+Babinda
+Badu Island
+Bamaga
+Baralaba
+Barcaldine
+Bargara
+Beaudesert
+Bedourie
+Beenleigh
+Beerwah
+Bell
+Biggenden
+Biloela
+Birdsville
+Blackall
+Blackbutt
+Blackwater
+Bollon
+Boonah
+Boondall
+Boulia
+Bowen
+Bribie Island
+Brisbane City
+Broadbeach
+Browns Plains
+Bundaberg
+Burketown
+Burpengary
+Caboolture
+Cairns
+Calamvale
+Calen
+Calliope
+Caloundra
+Cambooya
+Camooweal
+Canungra
+Capalaba
+Capella
+Cardwell
+Carina
+Carmila
+Carseldine
+Cecil Plains
+Charleville
+Charters Towers
+Cherbourg
+Childers
+Chillagoe
+Chinchilla
+Clare
+Clermont
+Cleveland
+Clifton
+Cloncurry
+Coen
+Collinsville
+Cooktown
+Coolangatta
+Coolum
+Coomera
+Cooroy
+Coorparoo
+Cooyar
+Crestmead
+Crows Nest
+Croydon
+Cunnamulla
+Dajarra
+Dalby
+Dayboro
+Deception Bay
+Deeragun
+Dimbulah
+Dirranbandi
+Doomadgee
+Drayton
+Duaringa
+Dulacca
+Dunwich
+Dutton Park
+Dysart
+Edmonton
+Eidsvold
+Emerald
+Emu Park
+Eromanga
+Esk
+Eton
+Eulo
+Eumundi
+Farleigh
+Ferny Grove
+Finch Hatton
+Forsayth
+Fortitude Valley
+Gatton
+Gayndah
+Georgetown
+Gin Gin
+Giru
+Gladstone
+Glenden
+Goodna
+Goombungee
+Goomeri
+Goondiwindi
+Goovigen
+Gordonvale
+Gracemere
+Greenvale
+Gympie
+Halifax
+Harrisville
+Helidon
+Hendra
+Herberton
+Hervey Bay
+Highfields
+Holland Park
+Home Hill
+Hope Vale
+Horn Island
+Howard
+Hughenden
+Hungerford
+Ilfracombe
+Imbil
+Inala
+Indooroopilly
+Ingham
+Inglewood
+Injune
+Innisfail
+Ipswich
+Isisford
+Jandowae
+Jericho
+Jimboomba
+Jondaryan
+Julia Creek
+Jundah
+Kalbar
+Karana Downs
+Karumba
+Kawana Waters
+Kenilworth
+Kgari
+Kilcoy
+Kilkivan
+Killarney
+Kingaroy
+Kirwan
+Kowanyama
+Kumbia
+Kuranda
+Kynuna
+Laidley
+Laura
+Leyburn
+Lockhart River
+Logan Central
+Logan Village Yarrabilba
+Loganholme
+Longreach
+Lowood
+Mackay
+Mackay Northern Beaches
+Macleay Island
+Magnetic Island
+Malanda
+Maleny
+Mango Hill North Lakes
+Many Peaks
+Marburg
+Mareeba
+Marian
+Marlborough
+Marmor
+Maroochydore
+Maryborough
+Mckinlay
+Meandarra
+Middlemount
+Miles
+Millaa Millaa
+Millmerran
+Mirani
+Miriam Vale
+Mission Beach
+Mitchell
+Monto
+Moore
+Moorooka
+Moranbah
+Morningside
+Mornington Island
+Morven
+Mossman
+Mount Garnet
+Mount Isa
+Mount Larcom
+Mount Molloy
+Mount Morgan
+Mount Ommaney
+Mount Perry
+Mount Surprise
+Moura
+Mourilyan
+Mudgeeraba
+Mundingburra
+Mundubbera
+Mungallala
+Mungindi
+Murgon
+Muttaburra
+Nambour
+Nanango
+Nebo
+Nerang
+Noosa Heads
+Normanton
+North Rockhampton
+North Tamborine
+Oakey
+Palm Beach
+Palm Island
+Palmwoods
+Pentland
+Peranga
+Petrie
+Pimpama
+Pittsworth
+Pomona
+Pormpuraaw
+Port Douglas
+Proserpine
+Proston
+Quilpie
+Rathdowney
+Ravenshoe
+Ravenswood
+Redcliffe
+Redland Bay
+Richmond
+Robina
+Rockhampton
+Rolleston
+Rollingstone
+Roma
+Rosedale
+Rosewood
+Runaway Bay
+Russell Island
+Saint George
+Saint Lawrence
+Sandgate
+Sarina
+Seaforth
+Sherwood
+Silkwood
+Sippy Downs
+Smithfield
+South Johnstone
+South Kolan
+Southport
+Springfield
+Springsure
+Springwood
+Stafford
+Stanthorpe
+Stuart
+Surat
+Surfers Paradise
+Talwood
+Tambo
+Tannum Sands
+Tara
+Taroom
+Texas
+Thallon
+Thargomindah
+The Gap
+Theodore
+Thursday Island
+Tiaro
+Tieri
+Tin Can Bay
+Toogoolawah
+Toowoomba
+Townsville
+Tully
+Upper Mount Gravatt
+Walkerston
+Wallangarra
+Wallumbilla
+Wandoan
+Warwick
+Weipa
+West End
+Westwood
+Whitsunday
+Windorah
+Winton
+Wondai
+Woodford
+Woorabinda
+Wowan
+Wujal Wujal
+Wyandra
+Wynnum
+Yamanto
+Yangan
+Yaraka
+Yarrabah
+Yarraman
+Yelarbon
+Yeppoon
+Yuleba
+Yungaburra
