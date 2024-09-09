@@ -1,6 +1,6 @@
 # how to use git to work with this repo
 ## setup
-Check if git is installed on your computer. If not, install it and setup your email and username (probably just ask chatGPT how to do this)
+Check if git is installed on your computer. If not, install it and setup your email and username (ask chatGPT how to do this)
 
 ## get the repo onto your computer
 git clone https://github.com/theMichaelR/DECO7180
@@ -8,8 +8,7 @@ git clone https://github.com/theMichaelR/DECO7180
 
 ## make sure the project is setup correctly
 git remote -v
-- this is show you what remote repo your local project is hooked up to, type it into your console on vs code with the project open
-- it should return:
+- this will make sure your local project is connected to the shard repo on github, type it into your console on vs code with the project open, it should return:
 - "origin  https://github.com/theMichaelR/DECO7180.git (fetch)"
 - "origin  https://github.com/theMichaelR/DECO7180.git (push)"
 
@@ -20,7 +19,7 @@ git pull origin main
 git checkout -b <your-new-branch-name>
 - this makes a new "branch", a new place for you to make changes to help with future rollbacks if things break
 
-now make any changes you want to, you can use "git status" in your terminal at any time to see what files you've changed
+Now make any changes you want to, you can use "git status" in your terminal at any time to see what files you've changed.
 
 git add .
 - this adds all the files you've changed
@@ -41,3 +40,6 @@ git merge <your-new-branch-name>
 - this will merge the changes you've made into the shared github repo, congrats, you did it 🎉!
 
 Now go onto the repo on github and go into the "pull requests" tab, here it should have an option to complete your merge and delete the branch that you made.
+
+## bonus tip
+If you are ever in doubt, stop what your doing and paste your most recent console information or your "git status" into chatGPT. It's really good at helping with git 😊.
