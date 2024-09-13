@@ -94,6 +94,7 @@
     <!-- Map container -->
     <div id="map" style="height: 600px; width: 100%;"></div>
 
+    <!-- Footer-->
     <footer>
         <div class="wrap">
             <div class="links-container">
@@ -121,12 +122,22 @@
         </div>
     </footer>
 
-    <!-- Google Maps API -->
+    <!-- Suburb Overlay-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchAllSuburbBoundaries(); 
+        });
+    </script>
+
+    <!-- Script Refernces-->
+    <script src="js/suburbBoundaries.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- GoogleMapsAPI -->
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA15MU69GZXFABCHmKgPZIhXu0_ayRlzWo&libraries=visualization&callback=initMap">
     </script>
-    <script src="js/map.js"></script>
-    <script src="js/main.js"></script>
 
 </body>
 </html>
