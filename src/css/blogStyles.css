@@ -1,12 +1,25 @@
+/* Global Variables */
+:root {
+    --black: #000000;
+    --dark_blue: #0D0060;
+    --dark_grey: #767070;
+    --light_grey: #D9D9D9;
+    --light_blue: #449EF1;
+    --white: #FFFFFF;
+}
+
 /* GLOBAL */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .wrapper {
+    felx: 1;
     max-width: 1134px;
     margin: 0 auto;
     padding: 0 20px;
@@ -17,14 +30,8 @@ body {
     line-height: 1.6;
 }
 
-/* BASE */
-:root {
-    --black: #000000;
-    --dark_blue: #0D0060;
-    --dark_grey: #767070;
-    --light_grey: #D9D9D9;
-    --light_blue: #449EF1;
-    --white: #FFFFFF;
+section {
+    margin-top: 100px;
 }
 
 /* HERO SECTION */
@@ -130,15 +137,114 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* BLOG CONTAINER */
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--dark_grey);
+}
+
+.posts-container,
+.sidebar {
+    float: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.posts-container {
+    width: 70%;
+}
+
+.post,
+.box {
+    background: var(--light_grey);
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.date,
+.title,
+.text,
+.links,
+.links a,
+.category a,
+.p-post a,
+.tags a {
+    margin-bottom: 10px;
+}
+
+.date {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.links,
+.category span,
+.p-post span,
+.tags {
+    display: flex;
+    align-items: center;
+}
+
+.links {
+    justify-content: space-between;
+}
+
+.tags a {
+    background: #eee;
+    border-radius: 5px;
+    font-size: 0.8em;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 28%;
+}
+
+.category ul,
+.recent-posts ul,
+.tips-tricks ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.category ul li,
+.recent-posts ul li,
+.tips-tricks ul li {
+    margin-bottom: 10px;
+}
+
+.category ul li a,
+.recent-posts ul li a,
+.tips-tricks ul li a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.category ul li a:hover,
+.recent-posts ul li a:hover,
+.tips-tricks ul li a:hover {
+    color: var(--light_blue);
+}
+
 /* FOOTER */
 footer {
     background: var(--black);
     color: var(--white);
-    position: relative;
-    bottom: 0;
     width: 100%;
     padding: 70px 0;
     z-index: 1000;
+    position: relative;  /* Remove any existing 'position' properties */
+    bottom: 0;
+    text-align: center;
 }
 
 footer h2 {
@@ -161,7 +267,6 @@ footer ul li a {
     text-decoration: none;
 }
 
-/* Center the form and align input and button horizontally */
 footer form {
     display: flex;
     justify-content: center;
@@ -171,7 +276,6 @@ footer form {
     text-align: center;
 }
 
-/* Input field */
 footer form input[type="text"] {
     padding: 8px;
     width: auto;
@@ -180,7 +284,6 @@ footer form input[type="text"] {
     margin-right: 10px; /* Add spacing between input and button */
 }
 
-/* Subscribe button */
 footer form button {
     padding: 8px 16px;
     border-radius: 24px;

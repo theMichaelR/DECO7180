@@ -1,23 +1,4 @@
-/* GLOBAL */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.wrapper {
-    max-width: 1134px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-body {
-    font-family: 'Sora', sans-serif;
-    line-height: 1.6;
-}
-
-/* BASE */
+/* Global Variables */
 :root {
     --black: #000000;
     --dark_blue: #0D0060;
@@ -27,47 +8,35 @@ body {
     --white: #FFFFFF;
 }
 
-/* HERO SECTION */
-.hero-section {
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    color: var(--black);
+/* Global Reset and Box-Sizing */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.hero-section .left h1 {
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
     font-family: 'Sora', sans-serif;
-    font-weight: 900;
-    font-size: 50px;
-    color: var(--white);
-    margin-top: 75px;
-    margin-bottom: 250px;
+    background-color: var(--white);
+    line-height: 1.6;
 }
 
-.hero-section .left {
-    flex: 1;
-}
-
-.hero-section .right {
-    flex: 1;
-}
-
-.hero-section .right img {
-    height: 520px;
-    vertical-align: middle;
-    margin-right: -100px;
-    margin-top: -200px;
-}
-
-/* WRAPPER & BUTTONS */
+/* Wrapper */
 .wrapper {
     max-width: 1134px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
+/* Button */
 .btn {
     padding: 16px 32px;
     border-radius: 24px;
@@ -79,7 +48,7 @@ body {
     text-decoration: none;
 }
 
-/* HEADER & NAVIGATION */
+/* Header */
 header {
     background: var(--black);
     height: 75vh;
@@ -130,13 +99,54 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* FOOTER */
+/* Hide mobile elements by default */
+nav.mobile-nav, .mobile-menu-container {
+    display: none;
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    color: var(--black);
+}
+
+.hero-section .left h1 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    color: var(--white);
+    margin-top: 75px;
+    margin-bottom: 250px;
+}
+
+.hero-section .left {
+    flex: 1;
+}
+
+.hero-section .right {
+    flex: 1;
+}
+
+.hero-section .right img {
+    height: 520px;
+    vertical-align: middle;
+    margin-right: -100px;
+    margin-top: -200px;
+}
+
+/* Graph Section */
+
+
+/* Footer */
 footer {
     background: var(--black);
     color: var(--white);
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    margin-top: 100px;
     padding: 70px 0;
     z-index: 1000;
 }
@@ -161,26 +171,20 @@ footer ul li a {
     text-decoration: none;
 }
 
-/* Center the form and align input and button horizontally */
 footer form {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row; /* Align input and button in a row */
+    flex-direction: row; /* Align input and button horizontally */
     margin-top: 15px;
-    text-align: center;
 }
 
-/* Input field */
 footer form input[type="text"] {
-    padding: 8px;
-    width: auto;
+    margin-right: 10px;
     max-width: 200px;
-    border: 1px solid var(--dark_grey);
-    margin-right: 10px; /* Add spacing between input and button */
+    padding: 8px;
 }
 
-/* Subscribe button */
 footer form button {
     padding: 8px 16px;
     border-radius: 24px;
@@ -191,12 +195,7 @@ footer form button {
     text-align: center;
 }
 
-/* RESPONSIVENESS */
-
-/* Ensure mobile elements are hidden on larger screens */
-nav.mobile-nav, .mobile-menu-container {
-    display: none;
-}
+/* Responsive Design */
 
 /* Show mobile elements on small screens only */
 @media (max-width: 800px) {
@@ -209,6 +208,7 @@ nav.mobile-nav, .mobile-menu-container {
     }
 }
 
+/* Responsive adjustments */
 @media (max-width: 1100px) {
     nav {
         width: 100%;
@@ -227,18 +227,9 @@ nav.mobile-nav, .mobile-menu-container {
         flex-direction: row;
     }
 
-    .hero-section .left {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
     .hero-section .left h1 {
         font-size: 30px;
-        line-height: 125%;
         margin-top: 250px;
-        margin-left: 50px;
     }
 
     .hero-section .right img {
@@ -254,24 +245,13 @@ nav.mobile-nav, .mobile-menu-container {
 
     .hero-section .left h1 {
         font-size: 30px;
-        line-height: 125%;
+        text-align: center;
         margin-top: 150px;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .hero-section .right {
-        margin-top: -200px;
-        text-align: center;
     }
 
     .hero-section .right img {
         max-width: 100%;
         margin-top: -200px;
-    }
-
-    nav {
-        display: none;
     }
 
     nav.mobile-nav {
@@ -290,10 +270,6 @@ nav.mobile-nav, .mobile-menu-container {
         top: 0;
         left: 100%;
         background: var(--dark_grey);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 200;
         transition: all 400ms ease;
     }
 
