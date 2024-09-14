@@ -1,3 +1,5 @@
+/*
+
 // suburbBoundaries.js
 
 const API_URL = 'https://data.brisbane.qld.gov.au/api/explore/v2.1/catalog/datasets/suburb-boundaries/records';
@@ -46,3 +48,5 @@ function fetchSuburbsWithOffset(offset, limit) {
             console.error('Error fetching suburb data:', error);
         });
 }
+
+*/
