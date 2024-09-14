@@ -1,4 +1,4 @@
-// offences here will be shown in checkboxes
+// this list populates the checkboxes on the page
 const selectedOffences = [
     "Assault",
     "Sexual Offences",
@@ -12,7 +12,7 @@ const selectedOffences = [
     "Other Offences"
 ]
 
-// Function to dynamically generate checkboxes for each category
+// Generates checkboxes based on selectedOffences variable
 function generateCheckboxes() {
     const checkboxContainer = document.getElementById('checkboxContainer');
     
@@ -23,7 +23,7 @@ function generateCheckboxes() {
         checkbox.type = 'checkbox';
         checkbox.id = category;
         checkbox.value = category;
-        checkbox.checked = true; // Default to checked
+        checkbox.checked = true; // boxes are checked by default
 
         const label = document.createElement('label');
         label.htmlFor = category;
@@ -35,28 +35,25 @@ function generateCheckboxes() {
     });
 }
 
-// Function to sum offences in a given range
+// Sums offences based on the date range provided
 function sumOffencesInRange(data, startDate, endDate, selectedOffences) {
-    // Convert start and end dates to a comparable format (assuming format is MMMYY)
+    // format start and end dates
     const start = new Date(startDate + "-01");
     const end = new Date(endDate + "-01");
 
-    // Initialize an object to store the sums for each category
+    // setup a new object where future sums will go
     let offenceSums = {};
     selectedOffences.forEach(category => {
         offenceSums[category] = 0;
     });
 
-    // Initilise division name for later
     let divisionName = '';
 
-    // Iterate over the records
     data.result.records.forEach(function (recordValue) {
         var currentDivisionName = recordValue["Division"];
         var MonthYear = recordValue["Month Year"];
         
         if (currentDivisionName && MonthYear) {
-            // Set division name
             if (!divisionName) {
                 divisionName = currentDivisionName;
             }
@@ -80,10 +77,9 @@ function sumOffencesInRange(data, startDate, endDate, selectedOffences) {
     return { offenceSums, divisionName };
 }
 
-// Function to iterate over records and append them to the DOM
+// Create a chart with data from sumOffencesInRange function
 function createChart(data, startDate, endDate, selectedOffences) {
 
-    // Sum offences within the desired range (JAN02 to JAN04 for example)
     const { offenceSums, divisionName } = sumOffencesInRange(data, startDate, endDate, selectedOffences);
 
     const offenceLabels = selectedOffences;
@@ -91,7 +87,7 @@ function createChart(data, startDate, endDate, selectedOffences) {
 
     const ctx = document.getElementById('offencesChart').getContext('2d');
     
-    // If chart already exists, destroy it before creating a new one
+    // If a chart already exists, destroy it before creating a new one
     if (window.offencesChart instanceof Chart) {
         window.offencesChart.destroy();
     }
@@ -102,7 +98,7 @@ function createChart(data, startDate, endDate, selectedOffences) {
         data: {
             labels: offenceLabels,
             datasets: [{
-                label: `Offence Counts for ${divisionName} (${startDate} to ${endDate})`,
+                label: `${divisionName}`,
                 data: offenceData,
                 backgroundColor: 'lightblue',
                 borderColor: 'blue',
@@ -113,6 +109,12 @@ function createChart(data, startDate, endDate, selectedOffences) {
             scales: {
                 y: {
                     beginAtZero: true
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: `Offence counts from ${startDate} to ${endDate}`
                 }
             }
         }

@@ -140,7 +140,46 @@ nav.mobile-nav, .mobile-menu-container {
 }
 
 /* Graph Section */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--dark_blue);
+}
 
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--light_grey);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#checkboxContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+}
+
+#checkboxContainer div {
+    display: flex;
+    align-items: center;
+    gap: 5px; 
+    margin-bottom: 5px; 
+}
+
+#checkboxContainer label {
+    margin-left: 5px;
+    font-weight: normal;
+    color: var(--black);
+}
+
+#offencesChart {
+    display: block;
+    margin-top: 40px;
+    max-width: 100%;
+}
 
 /* Footer */
 footer {
