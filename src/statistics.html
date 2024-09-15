@@ -16,39 +16,49 @@
     <header>
         <div class="wrapper">
             <nav>
-                <div class="logo">Balance</div>
+                <div class="logo"></div>
 
                 <ul>
                     <li>
-                        <a href="index.html">HOME</a>
+                        <a href="index.html">Home</a>
                     </li>
                     
                     <li>
-                        <a href="blog.html">BLOG</a>
+                        <a href="blog.html">Blog</a>
                     </li>
 
                     <li>
-                        <a href="statistics.html">STATISTICS</a>
+                        <a href="statistics.html">Stats</a>
                     </li>
 
                     <li>
-                      <a href="founders.html">FOUNDERS</a>
+                      <a href="founders.html">Founders</a>
                     </li>
 
                     <li>
-                        <a href="map.html" class="btn">CRIME HEATMAP</a>
+                        <a href="map.html" class="btn">Crime Heatmap</a>
                     </li>
                 </ul>
             </nav>
-            <!-- End of destktop navigation menu-->
 
-            <nav class="mobile-nav">
-                <div class="logo">Balance</div>
-                <div class="menu-icon">
-                    <img src="media/icons8-menu-94.png" alt="">
-                </div>
-            </nav>
+            <!-- Move the form section here, just below the nav -->
+            <div class="wrapper">
+                <label for="suburb">Suburb (Brisbane if blank): </label>
+                <input type="text" id="suburb" placeholder="Enter suburb">
 
+                <label for="startDate">Start Date (JUN01 if blank): </label>
+                <input type="text" id="startDate" placeholder="Start Date">
+
+                <label for="endDate">End Date (JUL21 if blank): </label>
+                <input type="text" id="endDate" placeholder="End Date">
+
+                <div id="checkboxContainer"></div>
+
+                <button id="submitBtn" class="btn">Search</button>
+                <canvas id="offencesChart" width="400" height="200"></canvas>
+            </div>
+
+            <!-- End of mobile navigation menu-->
             <div class="mobile-menu-container">
                 <div class="close-icon">
                     <img src="media/icons8-close-48.png" alt="">
@@ -77,77 +87,16 @@
                     </li>
                 </ul>
             </div>
-
             <!-- End of mobile navigation menu-->
-
-            <div class="hero-section">
-                <div class="left">
-                    <h1>
-                        REJECT THE <BR>CHAOS <BR>RECLAIM YOUR <BR>BALANCE
-                    </h1>
-
-                    <!-- End of left hand side-->
-                </div>
-
-                <div class="right">
-                    <img src="media/max-vs-PjCh5goo-unsplash.jpg" alt="Person Doing Meditation Pose" />
-                    <figcaption>https://unsplash.com/photos/vs-PjCh5goo?utm_source=unsplash&utm_medium=referral&utm_c
-                        ontent=creditCopyText</figcaption>
-                </div>
-            </div>
-
         </div>
     </header>
-
     <!-- End of header section-->
 
-        <div class="wrapper">
-            <label for="suburb">Suburb (Brisbane if blank): </label>
-            <input type="text" id="suburb" placeholder="Enter suburb">
-            
-            <label for="startDate">Start Date (JUN01 if blank): </label>
-            <input type="text" id="startDate" placeholder="Start Date">
-            
-            <label for="endDate">End Date (JUL21 if blank): </label>
-            <input type="text" id="endDate" placeholder="End Date">
+    <!-- Script to include the statistics.js file -->
+    <script src="js/statistics.js"></script>
 
-            <div id="checkboxContainer"></div>
-            
-            <button id="submitBtn" class="btn">Search</button>
-            <canvas id="offencesChart" width="400" height="200"></canvas>
-        </div>
-        <script src="js/statistics.js"></script>
-
-    <!-- End of breif section-->
-
-    <footer>
-        <div class="wrap">
-            <div class="links-container">
-                <div class="links">
-                    <ul>
-                        <li>
-                        <a href="#">CONTACT US</a>
-                        </li>
-                        <li>
-                            <a href="#">PRIVACY POLICY</a>
-                        </li>
-
-                        <li>
-                            <a href="#">TERMS AND CONDITIONS</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <form action="#">
-                    <input type="text" placeholder="Email Address" />
-                    <button class="submit-btn">Subscribe</button>
-                </form>
-
-            </div>
-            <h2 class="end-copy">READY TO FIND YOUR BALANCE?</h2>
-        </div>
-    </footer>
-        <!-- End of footer section-->
-        <script src="js/main.js"></script>
-    </body>
+    <!-- End of brief section-->
+    
+    <script src="js/main.js"></script>
+</body>
 </html>
