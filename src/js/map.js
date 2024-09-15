@@ -32,7 +32,7 @@ function fetchCrimeData() {
 
 // Aggregate crime data by division
 function processCrimeData(records) {
-  const crimeCounts = {};
+  const crimeData = {};
 
   records.forEach(record => {
     let division = record["Division"];
@@ -41,24 +41,31 @@ function processCrimeData(records) {
     // Normalize division names
     division = division.toLowerCase().trim();
 
-    // Sum up all offences for the division
-    const totalOffences = Object.keys(record).reduce((sum, key) => {
-      if (key !== 'Division' && key !== 'Month Year' && key !== '_id') {
-        return sum + parseInt(record[key] || 0, 10);
-      }
-      return sum;
-    }, 0);
-
-    if (crimeCounts[division]) {
-      crimeCounts[division] += totalOffences;
-    } else {
-      crimeCounts[division] = totalOffences;
+    // Initialize division entry if not exists
+    if (!crimeData[division]) {
+      crimeData[division] = {
+        totalOffences: 0,
+        offenceCounts: {}
+      };
     }
 
-    // console.log(`Division: ${division}, Total Offences: ${crimeCounts[division]}`);
+    // Sum up all offences for the division
+    Object.keys(record).forEach(key => {
+      if (key !== 'Division' && key !== 'Month Year' && key !== '_id') {
+        const offenceCount = parseInt(record[key] || 0, 10);
+        crimeData[division].totalOffences += offenceCount;
+
+        // Sum offences per category
+        if (crimeData[division].offenceCounts[key]) {
+          crimeData[division].offenceCounts[key] += offenceCount;
+        } else {
+          crimeData[division].offenceCounts[key] = offenceCount;
+        }
+      }
+    });
   });
 
-  return crimeCounts;
+  return crimeData;
 }
 
 // Main map initialization function
@@ -95,31 +102,18 @@ function initMap() {
   }
 
 // Map crime data to divisions and apply styles
-function applyBoundaryStyles(map, crimeCounts) {
-  // Get max and min crime counts for scaling
-  const counts = Object.values(crimeCounts);
+function applyBoundaryStyles(map, crimeData) {
+  const counts = Object.values(crimeData).map(data => data.totalOffences);
   const maxCount = Math.max(...counts);
   const minCount = Math.min(...counts);
-  // console.log(`Max crime count: ${maxCount}, Min crime count: ${minCount}`);
 
   map.data.setStyle(function(feature) {
-    // Collect properties
-    const properties = {};
-    feature.forEachProperty(function(value, name) {
-      properties[name] = value;
-    });
-    // console.log('Feature properties:', properties); 
-
     let divisionName = feature.getProperty('Name') || feature.getProperty('name');
     if (!divisionName) return {};
 
-    // Normalize division name
     divisionName = divisionName.toLowerCase().trim();
-
-    const crimeCount = crimeCounts[divisionName] || 0;
-
-    // console.log(`Applying style to division: ${divisionName}, Crime Count: ${crimeCount}`);
-
+    const divisionData = crimeData[divisionName];
+    const crimeCount = divisionData ? divisionData.totalOffences : 0;
     const color = getColorForCrimeCount(crimeCount, minCount, maxCount);
 
     return {
@@ -130,12 +124,25 @@ function applyBoundaryStyles(map, crimeCounts) {
     };
   });
 
-  // TODO: Add click listener for divisions and display more detailed statistics
+  // Click listener
   map.data.addListener('click', function(event) {
-    const divisionName = event.feature.getProperty('Name');
+    const divisionName = event.feature.getProperty('Name') || event.feature.getProperty('name');
+    if (!divisionName) return;
+
     const divisionNameNormalized = divisionName.toLowerCase().trim();
-    const crimeCount = crimeCounts[divisionNameNormalized] || 0;
-    const contentString = `<strong>${divisionName}</strong><br>Total Crimes: ${crimeCount}`;
+    const divisionData = crimeData[divisionNameNormalized];
+
+    let contentString = `<strong>${divisionName}</strong><br>`;
+    if (divisionData) {
+      contentString += `Total Crimes: ${divisionData.totalOffences}<br>`;
+      contentString += `<ul>`;
+      for (const [offence, count] of Object.entries(divisionData.offenceCounts)) {
+        contentString += `<li>${offence}: ${count}</li>`;
+      }
+      contentString += `</ul>`;
+    } else {
+      contentString += 'No crime data available.';
+    }
 
     const infowindow = new google.maps.InfoWindow({
       content: contentString,
