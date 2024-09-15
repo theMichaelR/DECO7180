@@ -70,8 +70,13 @@ function initMap() {
     mapTypeId: 'roadmap'
   });
 
+
+  // Michael I replaced your link with the one below and it didn't require CORS
+  // on my machine, does it work on yours? Your old link is below:
+  // https://cors-anywhere.herokuapp.com/https://gist.githubusercontent.com/theMichaelR/3c5272233ce9cf0c257cd7d9cd27a48f/raw/QPS_DIVISIONS.kml
+
   // Fetch and add GeoJSON data
-  fetch('https://cors-anywhere.herokuapp.com/https://gist.githubusercontent.com/theMichaelR/3c5272233ce9cf0c257cd7d9cd27a48f/raw/QPS_DIVISIONS.kml')
+  fetch('https://raw.githubusercontent.com/theMichaelR/DECO7180/main/src/js/QPS_DIVISIONS.kml')
     .then(response => response.text())
     .then(kmlText => {
       const kml = new DOMParser().parseFromString(kmlText, 'text/xml');
