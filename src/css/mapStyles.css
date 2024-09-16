@@ -25,6 +25,7 @@ body {
     --light_grey: #D9D9D9;
     --light_blue: #449EF1;
     --white: #FFFFFF;
+    --main_blue: #4f62a9;
 }
 
 /* HERO SECTION */
@@ -81,8 +82,8 @@ body {
 
 /* HEADER & NAVIGATION */
 header {
-    background: var(--black);
-    height: 75vh;
+    background: var(--white);
+    height: 25vh;
     width: 100%;
     z-index: 1000;
 }
@@ -100,7 +101,7 @@ nav {
 }
 
 nav.scrolled {
-    background: var(--dark_blue);
+    background: var(--white);
     box-shadow: 0 16px 14px -8px rgba(0, 0, 0, 0.3);
     border-radius: 0 0 8px 8px;
     top: 0;
@@ -111,7 +112,7 @@ nav .logo {
     font-family: 'Sora', sans-serif;
     font-weight: 900;
     font-size: 40px;
-    color: var(--white);
+    color: var(--main_blue);
 }
 
 nav ul {
@@ -126,7 +127,7 @@ nav ul li a {
     font-family: 'Sora', sans-serif;
     font-weight: bold;
     font-size: 16px;
-    color: var(--white);
+    color: var(--main_blue);
     text-decoration: none;
 }
 
