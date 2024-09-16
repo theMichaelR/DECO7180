@@ -76,7 +76,7 @@ body {
     display: inline-block;
     font-weight: bold;
     font-size: 18px;
-    background: var(--light_blue);
+    background: var(--main_blue);
     text-decoration: none;
 }
 
