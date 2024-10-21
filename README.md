@@ -1,3 +1,6 @@
+# Risky Business
+Risky Business is a website that allows you to track crime rates in suburbs across Brisbane. It works by connecting to publically available databases and providing this information via an interactive map and statistics page. Risky Business also provides helpful information in the form of a blog where the public is free to comment.
+
 # how to use git to work with this repo
 ## setup
 Check if git is installed on your computer. If not, install it and setup your email and username (ask chatGPT how to do this)
